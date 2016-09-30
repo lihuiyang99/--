@@ -1,0 +1,416 @@
+@import url('function.less');
+html,
+body {
+    height: 100%;
+}
+//page1
+.door {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    .door-left {
+        width: 52.5%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        background: url("../img/ps1/leftDoor.png");
+        background-size: cover;
+        background-position: right center;
+    }
+    .door-right {
+        width: 52.5%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 100%;
+        background: url("../img/ps1/rightDoor.png");
+        background-size: cover;
+    }
+    .wheel {
+        .pos-box-cc(@w:4.8rem, @h:4.8rem, @pos:absolute);
+        background: url("../img/ps1/wheel.png");
+        background-size: cover;
+        //css3动画
+        -webkit-animation: circle 4s linear;
+        -moz-animation: circle 4s linear;
+        -o-animatio: circle 4s linear;
+        animation: circle 4s linear;
+        @-webkit-keyframes circle {
+            0% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(360deg);
+            }
+            100% {
+                transform: rotate(720deg);
+            }
+        }
+        @-moz-keyframes circle {
+            0% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(360deg);
+            }
+            100% {
+                transform: rotate(720deg);
+            }
+        }
+        @-o-keyframes circle {
+            0% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(360deg);
+            }
+            100% {
+                transform: rotate(720deg);
+            }
+        }
+        @keyframes circle {
+            0% {
+                transform: rotate(0deg);
+            }
+            50% {
+                transform: rotate(360deg);
+            }
+            100% {
+                transform: rotate(720deg);
+            }
+        }
+    }
+}
+//page2
+.box {
+    width: 100%;
+    height: 100%;
+    background: url("../img/ps1/bg2.png");
+    background-size: cover;
+    position: relative;
+    .star {
+        width: 6.8rem;
+        height: 8.3rem;
+        background: url("../img/ps1/star.png");
+        background-size: inherit;
+        position: absolute;
+        left: 0.69rem;
+        z-index: 2;
+        //css3动画
+        -webkit-animation: twinkling 3s infinite linear;
+        -moz-animation: twinkling 3s infinite linear;
+        -o-animation: twinkling 3s infinite linear;
+        animation: twinkling 3s infinite linear;
+        @-webkit-keyframes twinkling {
+            0% {
+                top: 0.3rem;
+            }
+            25% {
+                top: 0.4rem;
+            }
+            50% {
+                top: 0.5rem;
+            }
+            75% {
+                top: 0.4rem;
+            }
+            100% {
+                top: 0.3rem;
+            }
+        }
+        @-moz-keyframes twinkling {
+            0% {
+                top: 0.3rem;
+            }
+            25% {
+                top: 0.4rem;
+            }
+            50% {
+                top: 0.5rem;
+            }
+            75% {
+                top: 0.4rem;
+            }
+            100% {
+                top: 0.3rem;
+            }
+        }
+        @-o-keyframes twinkling {
+            0% {
+                top: 0.3rem;
+            }
+            25% {
+                top: 0.4rem;
+            }
+            50% {
+                top: 0.5rem;
+            }
+            75% {
+                top: 0.4rem;
+            }
+            100% {
+                top: 0.3rem;
+            }
+        }
+        @keyframes twinkling {
+            0% {
+                top: 0.3rem;
+            }
+            25% {
+                top: 0.4rem;
+            }
+            50% {
+                top: 0.5rem;
+            }
+            75% {
+                top: 0.4rem;
+            }
+            100% {
+                top: 0.3rem;
+            }
+        }
+    }
+    .map {
+        width: 6.63rem;
+        height: 5.45rem;
+        background: url("../img/ps1/chinaMap.png");
+        background-size: cover;
+        position: absolute;
+        top: 2.97rem;
+        left: 0.35rem;
+        z-index: 1;
+        .blink {
+            width: 4.87rem;
+            height: 3.58rem;
+            background: url("../img/ps1/blank.png");
+            background-size: cover;
+            position: absolute;
+            top: 1.13rem;
+            left: 1.1rem;
+            z-index: 3;
+            //css3动画
+            -webkit-animation: blank 1s infinite linear;
+            -moz-animation: blank 1s infinite linear;
+            -o-animation: blank 1s infinite linear;
+            animation: blank 1s infinite linear;
+            @-webkit-keyframes blank {
+                0% {
+                    opacity: 0.8;
+                }
+                25% {
+                    opacity: 1;
+                }
+                50% {
+                    opacity: 0.8;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+            @-moz-keyframes blank {
+                0% {
+                    opacity: 0.8;
+                }
+                25% {
+                    opacity: 0.5;
+                }
+                50% {
+                    opacity: 0.8;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+            @-o-keyframes blank {
+                0% {
+                    opacity: 0.8;
+                }
+                25% {
+                    opacity: 0.5;
+                }
+                50% {
+                    opacity: 0.8;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+            @keyframes blank {
+                0% {
+                    opacity: 0.8;
+                }
+                25% {
+                    opacity: 0.5;
+                }
+                50% {
+                    opacity: 0.8;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .content {
+        width: 3.15rem;
+        height: 2.94rem;
+        position: absolute;
+        z-index: 88;
+        top: 0.63rem;
+        left: 2.94rem;
+        color: #fff;
+        font-family: "微软雅黑";
+        h5 {
+            font-size: 0.32rem;
+        }
+        p {
+            font-size: 0.34rem;
+            width: 3.15rem;
+            height: 0.71rem;
+            text-align: center;
+            color: #fff;
+            line-height: 0.71rem;
+            background: url("../img/ps1/textBg.png");
+            background-size: cover;
+            background-position: center;
+            margin-top: 0.21rem;
+            margin-bottom: 0.26rem;
+            margin-left: -0.75rem;
+            span {
+                font-size: 0.44rem;
+                color: #fff;
+                display: inline-block;
+                margin-right: 0.1rem;
+            }
+        }
+        ul {
+            li:nth-child(1) {
+                border: 1px solid #66cccc;
+                width: 1.35rem;
+                height: 1.35rem;
+                border-radius: 0.1rem;
+                margin-left: 0.25rem;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    .btn {
+        display: block;
+        display: block;
+        width: 5.31rem;
+        height: 0.99rem;
+        text-align: center;
+        line-height: 0.99rem;
+        color: #fff;
+        border: 1px solid #66cccc;
+        font-size: 0.38rem;
+        position: absolute;
+        bottom: 0.8rem;
+        left: 1.1rem;
+        background: url("../img/ps1/btnBg.png");
+        background-size: cover;
+    }
+}
+//page3
+//page4
+.box4 {
+    width: 100%;
+    height: 100%;
+    background: url("../img/ps1/box4.png")center;
+    background-size: cover;
+    position: relative;
+    .nebulae {
+        width: 7.31rem;
+        height: 6.14rem;
+        background: url("../img/ps1/nebulae.png");
+        background-size: cover;
+        position: absolute;
+        top: 2rem;
+        left: 0;
+    }
+    .news {
+        width: 6.98rem;
+        background: rgba(51,51,51,0.2);
+        font-size: 0.12rem;
+        border: 1px solid #333;
+        position: absolute;
+        top: 0.34rem;
+        left: 0.25rem;
+        padding-bottom: 0.1rem;
+        .newsTop {
+            width: 100%;
+            border-bottom: 1px solid #333;
+            h5 {
+                color: #0099cc;
+                font-size: 0.36rem;
+                padding: 0.42rem 0.4rem 0.32rem;
+                text-align: center;
+                font-family: "微软雅黑";
+                font-weight: 700;
+            }
+            p {
+                font-size: 0.26rem;
+                color: #fff;
+                line-height: 0.44rem;
+                padding: 0 0.34rem 0.3rem 0.26rem;
+                font-family: "微软雅黑";
+            }
+        }
+        .swiper {
+            border-bottom: 1px solid #333;
+            p {
+                text-align: center;
+                color: #fff;
+                font-size: 0.26rem;
+                font-family: "微软雅黑";
+                padding-top: 0.17rem;
+                i {
+                    background: url(../img/ps1/icon1.png)no-repeat center center;
+                    width: 0.34rem;
+                    height: 0.23rem;
+                    background-size: cover;
+                    display: inline-block;
+                    margin-right: 0.1rem;
+                }
+            }
+            .wrapper {
+                height: 1.89rem;
+                ul {
+                    padding-left: 0.12rem;
+                    margin-top: 0.24rem;
+                    height: 1.65rem;
+                    li {
+                        width: 1.08rem;
+                        height: 1.08rem;
+                        float: left;
+                        border-radius: 50%;
+                        margin-left: 0.22rem;
+                        border: 1px solid #0073EA;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            border-radius: 50%;
+                        }
+                    }
+                }
+            }
+        }
+        .btn1 {
+            text-align: center;
+            height: 1.32rem;
+            a {
+                padding: 0.25rem 0.85rem;
+                display: inline-block;
+                font-size: 0.28rem;
+                color: #fff;
+                margin-top: 0.2rem;
+                border: 1px solid #669999;
+            }
+        }
+    }
+}

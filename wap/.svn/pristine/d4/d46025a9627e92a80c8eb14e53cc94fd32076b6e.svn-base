@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<title>2016产业中国年会</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="asset/css/reset.css" />
+		<link rel="stylesheet" href="asset/css/style.css" />
+		<script src="asset/js/mr-app.js"></script>
+		<script src="asset/js/js.js"></script>
+	</head>
+
+	<body>
+		<div class="diaocha">
+			<div class="inner">
+				<h1>“2016产业中国年会满意度”调查</h1>
+				<p>感谢大家百忙之中打开这个页面，此次调查旨在为下一年度的产业中国年会召开提供数据参考，以供我们下一步的改进工作。希望您能抽出一点点时间来配合我们的问卷填写。</p>
+				<p>*为了感谢您的参与，我们会在大会结束后的10日内，根据收到的调查情况，抽选10名幸运观众，他们将获得我们提供的精美礼品一份。</p>
+			</div>
+			<div class="inner">
+				<ul class="form-list">
+					<li>
+						<h4>1：最满意的会场设置（可多选）</h4>
+						<label for="a11"><input type="checkbox" name="a1" id="a11" value="" /> 签到上墙</label>
+						<label for="a12"><input type="checkbox" name="a1" id="a12" value="" /> 后勤服务</label>
+						<label for="a13"><input type="checkbox" name="a1" id="a13" value="" /> 议程安排</label>
+					</li>
+					<li>
+						<h4>2：最满意的会场环节（可多选）</h4>
+						<label for="b11"><input type="checkbox" name="a2" id="b11" value="" /> 嘉宾答疑</label>
+						<label for="b12"><input type="checkbox" name="a2" id="b12" value="" /> 现场互动</label>
+						<label for="b13"><input type="checkbox" name="a2" id="b13" value="" /> 议程安排</label>
+					</li>
+					<li>
+						<h4>3：最满意的会场安排（可多选）</h4>
+						<label for="c11"><input type="checkbox" name="a3" id="c11" value="" /> 嘉宾答疑</label>
+						<label for="c12"><input type="checkbox" name="a3" id="c12" value="" /> 现场互动</label>
+						<label for="c13"><input type="checkbox" name="a3" id="c13" value="" /> 议程安排</label>
+					</li>
+					<li>
+						<h4>4：其他补充</h4>
+						<div class="textarea" style=""><textarea name="" rows="" cols="" placeholder="请在这里填写您的留言"></textarea></div>
+					</li>
+				</ul>
+				<button class="btn-submit">提交</button>
+			</div>
+		</div>
+	</body>
+
+</html>

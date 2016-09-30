@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<title>2016产业中国年会</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="asset/css/reset.css" />
+		<link rel="stylesheet" href="asset/css/style.css" />
+		<script src="asset/js/mr-app.js"></script>
+		<script src="asset/js/js.js"></script>
+	</head>
+
+	<body>
+		<div class="box ohz">
+			<span class="stone stone1"></span>
+			<span class="stone stone2"></span>
+			<span class="stone stone3"></span>
+			<span class="stone stone4"></span>
+			<span class="earth earth1"></span>
+			<span class="earth earth2"></span>
+			<span class="earth earth3"></span>
+			<span class="earth earth4"></span>
+			<span class="earth earth5"></span>
+		</div>
+	</body>
+	<script src="asset/plug/orienter/orienter.min.js"></script>
+	<script src="asset/plug/gsap/TweenMax.min.js"></script>
+	<script type="text/javascript">
+		window.onload = function() {
+			var sw = $(window).width(),
+				sh = $(window).height();
+			//陨石动画
+			TweenMax.to($(".stone.stone1"), 10, {
+				x: sw + 200,
+				y: sh - 100,
+				scale: 1.2,
+				rotation: '360deg',
+				yoyo: true,
+				repeat: -1
+			})
+			TweenMax.to($(".stone.stone2"), 20, {
+				x: sw + 100,
+				rotation: '-360deg',
+				yoyo: true,
+				repeat: -1
+			})
+			TweenMax.to($(".stone.stone3"), 30, {
+				x: -sw,
+				y: sh - 300,
+				rotation: '-1800deg',
+				yoyo: true,
+				repeat: -1
+			})
+			TweenMax.to($(".stone.stone4"), 15, {
+				x: -sw,
+				y: -sh,
+				rotation: '-1800deg',
+				yoyo: true,
+				repeat: -1
+			})
+			var o = new Orienter();
+
+			function getTL(ox, oy) {
+				var tl = new TimelineMax();
+				tl.to($(".earth1"), 1, {
+						x: ox,
+						y: oy
+					})
+					.to($(".earth2"), 1, {
+						x: ox,
+						y: oy
+					}, '-=0.8')
+					.to($(".earth3"), 1, {
+						x: ox,
+						y: oy
+					}, '-=0.8')
+					.to($(".earth4"), 1, {
+						x: ox,
+						y: oy
+					}, '-=0.8')
+					.to($(".earth5"), 1, {
+						x: ox,
+						y: oy
+					}, '-=0.8')
+				return tl;
+			}
+			var step = 10;
+			var rangeX, rangeY;
+			o.handler = function(obj) {
+				getTL(obj.g, obj.b)
+			}
+			o.init();
+			//解决ios按下不变色
+			$(".earth").on({
+				touchstart: function() {
+					$(this).addClass("on")
+				},
+				touchend: function() {
+					$(this).removeClass("on")
+				}
+			})
+		}
+	</script>
+
+</html>

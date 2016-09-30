@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="" />
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<title>2016产业中国年会</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="asset/css/reset.css" />
+		<link rel="stylesheet" href="asset/css/style.css" />
+		<script src="asset/js/mr-app.js"></script>
+		<script src="asset/js/js.js"></script>
+	</head>
+
+	<body>
+		<div class="box4 ohz">
+			<div class="nebulae"></div>
+			<div class="news">
+				<div class="newsTop">
+					<h5>出行革命：电动化、智能化和共享化</h5>
+					<p>汽车产业正在革命：汽车产品形态经过百年的固化后迎来质变，电动化等零排放技术成为趋势；汽车越来越聪明，智能化进程明显加速；汽车产品形态经过百年的固化后迎来质变，电动化等零排放技术成为趋势；汽车越来越聪明，智能话进程明显加速</p>
+				</div>
+				<div class="swiper" id="swiper">
+					<p><i></i>嘉宾</p>
+					<div class="wrapper">
+						<div class="swiper-container">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<ul>
+										<li><img src="asset/img/ps1/person.png" /></li>
+										<li><img src="asset/img/ps1/person.png" /></li>
+										<li><img src="asset/img/ps1/person.png" /></li>
+										<li><img src="asset/img/ps1/person.png" /></li>
+										<li><img src="asset/img/ps1/person.png" /></li>
+									</ul>
+								</div>
+								<div class="swiper-slide">
+									<ul>
+										<li><img src="asset/img/ps1/person.png" /></li>
+										<li><img src="asset/img/ps1/person.png" /></li>
+										<li><img src="asset/img/ps1/person.png" /></li>
+										<li><img src="asset/img/ps1/person.png" /></li>
+										<li><img src="asset/img/ps1/person.png" /></li>
+									</ul>
+								</div>
+								<div class="swiper-slide">
+									<ul>
+										<li><img src="asset/img/ps1/person.png" /></li>
+										<li><img src="asset/img/ps1/person.png" /></li>
+										<li><img src="asset/img/ps1/person.png" /></li>
+										<li><img src="asset/img/ps1/person.png" /></li>
+										<li><img src="asset/img/ps1/person.png" /></li>
+									</ul>
+								</div>
+							</div>
+							<div class="swiper-pagination"></div>
+							<div class="swiper-pagination"></div>
+							<div class="swiper-pagination"></div>
+						</div>
+					</div>
+				</div>
+				<div class="btn-group">
+					<a href="#">文字直播</a>
+					<a href="#">视频直播</a>
+				</div>
+			</div>
+			<div class="circleNav">
+				<span class="lt01 on" data-url="#"><b></b></span>
+				<span class="lt02" data-url="#"><b></b></span>
+				<span class="lt03" data-url="#"><b></b></span>
+				<span class="lt04" data-url="#"><b></b></span>
+				<span class="lt05" data-url="#"><b></b></span>
+				<span class="lt06" data-url="#"><b></b></span>
+				<span class="lt07" data-url="#"><b></b></span>
+				<span class="lt08" data-url="#"><b></b></span>
+				<span class="lt09" data-url="#"><b></b></span>
+				<span class="lt10" data-url="#"><b></b></span>
+			</div>
+		</div>
+		<link rel="stylesheet" type="text/css" href="asset/plug/swiper/swiper-3.3.1.min.css" />
+		<script src="asset/plug/swiper/swiper-3.3.1.min.js"></script>
+		<script src="asset/plug/gsap/TweenMax.min.js"></script>
+		<script src="asset/plug/gsap/Draggable.min.js"></script>
+		<script type="text/javascript">
+			var swiper = new Swiper('.swiper-container', {
+				pagination: '.swiper-pagination'
+			});
+			window.onload = function() {
+				var len = 10
+				var step = 360 / len;
+				Draggable.create($(".circleNav"), {
+					type: "rotation",
+					onDragEnd: function() {
+						//var endRotation = (this.rotation | 0) % 360;
+						var endRotation = this.rotation | 0;
+						var stepInt = endRotation / step | 0;
+						var endPos = (endRotation % step) > (step / 2) ? stepInt + 1 : stepInt;
+						var idx = endPos % len;
+						//console.log("最后角度："+endRotation,"定位角度："+endPos)
+						TweenMax.to(this.target, 0.3, {
+							rotation: endPos * step,
+							ease: Power1.easeInOut
+						})
+						$(".circleNav span").removeClass("on")
+						console.log(idx);
+						if(idx < 0) {
+							$(".circleNav span").eq(Math.abs(idx)).addClass("on");
+						}
+						if(idx > 0) {
+							$(".circleNav span").eq(len - Math.abs(idx)).addClass("on");
+						}
+						if(idx == 0) {
+							$(".circleNav span").eq(0).addClass("on");
+						}
+					}
+				});
+				$(".circleNav span").on("click",function(){
+					var url=$(this).data("url");
+					window.location.href=url;
+				})
+			}
+		</script>
+	</body>
+
+</html>

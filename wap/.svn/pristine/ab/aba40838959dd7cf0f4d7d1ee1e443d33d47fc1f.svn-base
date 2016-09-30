@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>2016产业中国年会</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name = "format-detection" content = "telephone=no">
+		<link rel="stylesheet" href="asset/css/reset.css" />
+		<link rel="stylesheet" href="asset/css/style.css" />
+		<script src="asset/js/mr-app.js"></script>
+		<script src="asset/js/js.js"></script>
+	</head>
+	<body>
+		<div class="door" style="position: absolute; top: 0; left: 0;">
+		     <div class="door-left"></div>
+		     <div class="door-right"></div>
+		     <div class="wheel"></div>
+ 		</div>
+		<div class="box" style="display: none;">
+			<div class="star"></div>
+			<div class="map">
+				<div class="blink"></div>
+			</div>
+			<div class="content">
+				<h5>已签到人数</h5>
+				<p><span>10483000</span>人</p>
+				<ul></ul>
+			</div>
+			<a href="#" class="btn">为产业中国加油</a>
+ 		</div>
+ 		<script type="text/javascript">
+ 		$(window).load(function(){
+   				setTimeout(function(){
+   					$('.wheel').hide(2500);
+   					$('.box').show(2400);
+   				},1500)
+   				$('.door-left').animate({left:'-52.5%'},4000)
+				$('.door-right').animate({right:'-52.5%'},4000)
+ 				
+ 			})
+ 			$('.btn').on('click',function(){
+   				if($('.content ul li').size()==1){
+// 					return false;
+   				}else{
+   					var str = '<li><img src="asset/img/ps1/people.png" alt="" /></li>';
+   					$('.content ul').append(str)
+   				}
+//				console.log()
+ 				var num = $('.content p').find('span').text();
+   				$('.content p').find('span').text(parseInt(num)+1);
+ 			})
+ 		</script>
+ 	</body>
+</html>
